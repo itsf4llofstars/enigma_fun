@@ -21,8 +21,13 @@ rotors_dict = {
 def create_rotors():
     global letters, rotors_dict
 
-    for rotor, rotor_list in rotors_dict.items():
+    for rotor in rotors_dict.keys():
         while len(rotors_dict[rotor]) < 26:
             random_letter = random.choice(letters)
             if random_letter in rotors_dict[rotor]:
                 continue
+            else:
+                rotors_dict[rotor].append(random_letter)
+
+
+create_rotors()

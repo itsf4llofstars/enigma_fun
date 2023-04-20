@@ -75,11 +75,35 @@ class Enigma:
             ],
         }
 
+    def show_rotors(self):
+        for letter in self.enigma_rotors["right"][0]:
+            print(letter, end=" ")
+        print()
+        for letter in self.enigma_rotors["right"][1]:
+            print(letter, end=" ")
+        print()
+        print()
+        for letter in self.enigma_rotors["center"][0]:
+            print(letter, end=" ")
+        print()
+        for letter in self.enigma_rotors["center"][1]:
+            print(letter, end=" ")
+        print()
+        print()
+        for letter in self.enigma_rotors["left"][0]:
+            print(letter, end=" ")
+        print()
+        for letter in self.enigma_rotors["left"][1]:
+            print(letter, end=" ")
+        print()
+
     def set_rotors(self):
-        self.enigma_rotors["right"] = self.rotors[self.user_rotors[0]]
-        self.enigma_rotors["center"] = self.rotors[self.user_rotors[1]]
-        self.enigma_rotors["left"] = self.rotors[self.user_rotors[2]]
+        self.enigma_rotors["right"][1] = self.rotors[self.user_rotors[0]]
+        self.enigma_rotors["center"][1] = self.rotors[self.user_rotors[1]]
+        self.enigma_rotors["left"][1] = self.rotors[self.user_rotors[2]]
 
 
 if __name__ == "__main__":
     enigma = Enigma("ABC", "XYZ")
+    enigma.set_rotors()
+    enigma.show_rotors()

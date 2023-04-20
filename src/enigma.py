@@ -48,6 +48,24 @@ class Enigma:
             ]),
         }
 
+        self.enigma_rotors = {
+            "right": [deque([
+                "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M",
+                "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]),
+                    deque([])
+            ],
+            "center": [deque([
+                "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M",
+                "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]),
+                deque([])
+            ],
+            "left": [deque([
+                "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M",
+                "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]),
+                deque([])
+            ],
+        }
+
 
 if __name__ == "__main__":
     ...

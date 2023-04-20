@@ -7,7 +7,12 @@ from collections import deque
 class Enigma:
     """Enigma Machine class"""
 
-    def __init__(self):
+    def __init__(self, key: str, user_rotors=None):
+        # This auto generated form PyCharm
+        if user_rotors is None:
+            user_rotors = ["I", "II", "III"]
+        self.key = key
+        self.user_rotors = user_rotors
         self.keyboard = deque([
             "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M",
             "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"

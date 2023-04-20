@@ -48,6 +48,7 @@ def write_rotors():
             w.write("]\n")
 
 
-create_rotors()
-shuffle_rotors()
-write_rotors()
+if __name__ == "__main__":
+    create_rotors()
+    shuffle_rotors()
+    write_rotors()

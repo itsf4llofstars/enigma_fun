@@ -3,7 +3,7 @@
 idea/
 .vscode/
 vscode/
-venv/
+rotors.txt
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

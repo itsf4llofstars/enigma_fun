@@ -36,5 +36,18 @@ def shuffle_rotors():
             random.shuffle(rotor)
 
 
+def write_rotors():
+    with open("./rotors.txt", "w") as w:
+        for rotor_key, rotor in rotors_dict.items():
+            w.write("\"" + rotor_key + "\": [")
+            for i, letter in enumerate(rotor):
+                if i == len(rotor) - 1:
+                    w.write("\"" + letter + "\"")
+                else:
+                    w.write("\"" + letter + "\", ")
+            w.write("]\n")
+
+
 create_rotors()
 shuffle_rotors()
+write_rotors()

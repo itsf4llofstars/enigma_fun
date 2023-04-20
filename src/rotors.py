@@ -30,4 +30,11 @@ def create_rotors():
                 rotors_dict[rotor].append(random_letter)
 
 
+def shuffle_rotors():
+    for _ in range(1000):
+        for rotor in rotors_dict.values():
+            random.shuffle(rotor)
+
+
 create_rotors()
+shuffle_rotors()

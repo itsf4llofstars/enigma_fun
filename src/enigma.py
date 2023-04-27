@@ -17,6 +17,7 @@ class Enigma:
         self.letter = None
         self.message = None
 
+        # fmt: off
         self.keyboard = deque([
             "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M",
             "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"
@@ -74,6 +75,7 @@ class Enigma:
                 deque([])
             ],
         }
+        # fmt: on
 
     def show_rotors(self):
         for letter in self.enigma_rotors["right"][0]:

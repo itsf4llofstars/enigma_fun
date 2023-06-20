@@ -11,6 +11,7 @@ class Enigma:
         # Conditional auto generated form PyCharm
         if user_rotors is None:
             user_rotors = ["I", "II", "III"]
+
         self.msg_key = msg_key.upper()
         self.day_key = day_key.upper()
         self.user_rotors = user_rotors

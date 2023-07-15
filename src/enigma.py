@@ -79,10 +79,14 @@ class Enigma:
         # fmt: on
 
     def show_rotors(self):
-        for letter in self.enigma_rotors["right"][0]:
+        """Print the rotors with the left rotor being on top
+        the right rotor being on bottom. Both sides of the
+        rotors is printed.
+        """
+        for letter in self.enigma_rotors["left"][0]:
             print(letter, end=" ")
         print()
-        for letter in self.enigma_rotors["right"][1]:
+        for letter in self.enigma_rotors["left"][1]:
             print(letter, end=" ")
         print()
         print()
@@ -93,10 +97,10 @@ class Enigma:
             print(letter, end=" ")
         print()
         print()
-        for letter in self.enigma_rotors["left"][0]:
+        for letter in self.enigma_rotors["right"][0]:
             print(letter, end=" ")
         print()
-        for letter in self.enigma_rotors["left"][1]:
+        for letter in self.enigma_rotors["right"][1]:
             print(letter, end=" ")
         print()
 
@@ -107,6 +111,6 @@ class Enigma:
 
 
 if __name__ == "__main__":
-    enigma = Enigma("ABC", "XYZ")
+    enigma = Enigma("ABC", "XYZ", ["II", "VI", "III"])
     enigma.set_rotors()
     enigma.show_rotors()

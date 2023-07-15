@@ -120,13 +120,19 @@ class Enigma:
             deque.rotate(self.enigma_rotors[rotor_position][0], -1)
             deque.rotate(self.enigma_rotors[rotor_position][1], -1)
 
+    def set_rotors_to_day_key(self):
+        while self.enigma_rotors["left"][1][0] != self.day_key[0]:
+            deque.rotate(self.enigma_rotors["left"][1], -1)
+        while self.enigma_rotors["center"][1][0] != self.day_key[1]:
+            deque.rotate(self.enigma_rotors["center"][1], -1)
+        while self.enigma_rotors["right"][1][0] != self.day_key[2]:
+            deque.rotate(self.enigma_rotors["right"][1], -1)
+
 
 if __name__ == "__main__":
     enigma = Enigma("ABC", "XYZ", ["II", "VI", "III"])
     enigma.set_rotors()
     enigma.show_rotors()
-    enigma.rotate_rotor("left", 4)
-    enigma.rotate_rotor("center", 2)
-    enigma.rotate_rotor("right", 10)
+    enigma.set_rotors_to_day_key()
     print()
     enigma.show_rotors()

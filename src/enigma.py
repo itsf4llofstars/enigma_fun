@@ -132,9 +132,11 @@ class Enigma:
         while self.enigma_rotors["left"][0][0] != self.msg_key[0]:
             deque.rotate(self.enigma_rotors["left"][0], -1)
             deque.rotate(self.enigma_rotors["left"][1], -1)
+
         while self.enigma_rotors["center"][0][0] != self.msg_key[1]:
             deque.rotate(self.enigma_rotors["center"][0], -1)
             deque.rotate(self.enigma_rotors["center"][1], -1)
+
         while self.enigma_rotors["right"][0][0] != self.msg_key[2]:
             deque.rotate(self.enigma_rotors["right"][0], -1)
             deque.rotate(self.enigma_rotors["right"][1], -1)

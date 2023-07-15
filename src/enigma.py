@@ -105,12 +105,19 @@ class Enigma:
         print()
 
     def set_rotors(self):
-        self.enigma_rotors["right"][1] = self.rotors[self.user_rotors[0]]
+        self.enigma_rotors["left"][1] = self.rotors[self.user_rotors[0]]
         self.enigma_rotors["center"][1] = self.rotors[self.user_rotors[1]]
-        self.enigma_rotors["left"][1] = self.rotors[self.user_rotors[2]]
+        self.enigma_rotors["right"][1] = self.rotors[self.user_rotors[2]]
+
+    def rotate_rotor(self, rotor_position):
+        deque.rotate(self.enigma_rotors[rotor_position][0], -1)
+        deque.rotate(self.enigma_rotors[rotor_position][1], -1)
 
 
 if __name__ == "__main__":
     enigma = Enigma("ABC", "XYZ", ["II", "VI", "III"])
     enigma.set_rotors()
+    enigma.show_rotors()
+    enigma.rotate_rotor("left")
+    print()
     enigma.show_rotors()

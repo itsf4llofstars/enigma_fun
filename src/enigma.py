@@ -1,6 +1,7 @@
 """enigma.py
 Enigma Machine class file
 """
+import sys
 from collections import deque
 
 
@@ -110,6 +111,13 @@ class Enigma:
         self.enigma_rotors["right"][1] = self.rotors[self.user_rotors[2]]
 
     def rotate_rotor(self, rotor_position, rotations=1):
+        if (
+            rotor_position != "left"
+            or rotor_position != "center"
+            or rotor_position != "right"
+        ):
+            print("Enter left, center, right rotor position")
+            sys.exit()
         for _ in range(rotations):
             deque.rotate(self.enigma_rotors[rotor_position][0], -1)
             deque.rotate(self.enigma_rotors[rotor_position][1], -1)
@@ -119,6 +127,6 @@ if __name__ == "__main__":
     enigma = Enigma("ABC", "XYZ", ["II", "VI", "III"])
     enigma.set_rotors()
     enigma.show_rotors()
-    enigma.rotate_rotor("left", 4)
+    enigma.rotate_rotor("bacon", 4)
     print()
     enigma.show_rotors()
